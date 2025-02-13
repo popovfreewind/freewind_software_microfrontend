@@ -32,11 +32,8 @@ jobs:
       - name: Ensure remote exists
         run: git remote | grep origin || git remote add origin https://github.com/popovfreewind/freewind_software_microfrontend.git
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          # Ensure the branch is created if it doesn't exist
-          allow_empty_commit: true
-          force_orphan: true
+          publish_dir: ./public
