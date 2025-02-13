@@ -1,4 +1,6 @@
-function component() {
+import './style.css';
+
+function vanillaComponent() {
     const element = document.createElement('div');
 
     element.innerHTML = "Hello webpack!";
@@ -6,4 +8,4 @@ function component() {
     return element;
 }
 
-document.body.appendChild(component());
+document.body.appendChild(vanillaComponent());
