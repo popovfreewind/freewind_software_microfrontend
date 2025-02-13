@@ -29,6 +29,9 @@ jobs:
       - name: Build the app
         run: npm run build
 
+      - name: Ensure remote exists
+        run: git remote | grep origin || git remote add origin https://github.com/popovfreewind/freewind_software_microfrontend.git
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
