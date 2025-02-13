@@ -1,1 +1,1 @@
-project for micro frontend practice
+project for micro frontend practice 
