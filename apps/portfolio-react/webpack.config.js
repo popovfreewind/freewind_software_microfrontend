@@ -17,7 +17,7 @@ module.exports = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'reactRemote',
+            name: 'react-remote',
             filename: 'remoteEntry.js',
             exposes: {
                 './ReactApp': './src/App',

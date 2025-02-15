@@ -28,7 +28,7 @@ module.exports = {
             {
                 name: 'host',
                 remotes: {
-                    reactRemote: 'portfolio-react@http://localhost:3001/remoteEntry.js',
+                    'react-remote': 'portfolio-react@http://localhost:3001/remoteEntry.js',
                 },
             }
         )
