@@ -4,9 +4,7 @@
   "version": "1.0.0",
   "workspaces": [
     "./apps/host",
-    "./apps/angular-remote",
-    "./apps/react-remote",
-    "./apps/vue-remote"
+    "./apps/react-remote"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
