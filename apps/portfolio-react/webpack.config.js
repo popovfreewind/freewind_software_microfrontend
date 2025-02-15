@@ -9,11 +9,17 @@ module.exports = {
     devServer: {
         static: path.resolve(__dirname, 'dist'),
         port: 3001,
-        historyApiFallback: true,
     },
     output: {
-        publicPath: 'http://localhost:3001/',
         path: path.resolve(__dirname, 'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
     },
     plugins: [
         new ModuleFederationPlugin({
@@ -21,10 +27,6 @@ module.exports = {
             filename: 'remoteEntry.js',
             exposes: {
                 './ReactApp': './src/App',
-            },
-            shared: {
-                react: { singleton: true, eager: true },
-                'react-dom': { singleton: true, eager: true },
             },
         }),
         new HtmlWebpackPlugin({
