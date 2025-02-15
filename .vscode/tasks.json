@@ -3,10 +3,10 @@
 	"tasks": [
 		{
 			"type": "npm",
+			"label": "webpack: dev server",
+			"detail": "webpack serve --mode development",
 			"script": "start",
-			"problemMatcher": [],
-			"label": "npm: start",
-			"detail": "webpack serve --mode development"
+            "problemMatcher": []
 		}
 	]
 }

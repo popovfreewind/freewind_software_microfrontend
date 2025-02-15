@@ -1,7 +1,8 @@
 {
   "name": "freewind_software_microfrontend",
   "private": true,
-  "version": "1.0.0",  "workspaces": [
+  "version": "1.0.0",
+  "workspaces": [
     "./apps/angular-remote",
     "./apps/react-remote",
     "./apps/vue-remote"
