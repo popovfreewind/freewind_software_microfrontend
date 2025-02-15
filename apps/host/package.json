@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: host is here\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development"
   },

@@ -26,6 +26,7 @@ module.exports = {
         new ModuleFederationPlugin(
             {
                 name: 'host',
+                filename: "remoteEntry.js",
                 remotes: {
                     'portfolio-react': 'portfolio-react@http://localhost:3001/remoteEntry.js',
                 },
