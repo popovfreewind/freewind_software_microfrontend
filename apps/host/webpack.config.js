@@ -3,8 +3,6 @@ const { container } = require('webpack');
 const { ModuleFederationPlugin } = container;
 const path = require('path');
 
-const deps = require("./package.json").dependencies;
-
 module.exports = {
     entry: './src/index.js',
     devServer: {
@@ -29,18 +27,11 @@ module.exports = {
                 name: 'host',
                 filename: "remoteEntry.js",
                 remotes: {
-                    'portfolio-react': 'portfolio-react@http://localhost:3001/remoteEntry.js',
+                    'portfolioReact': 'portfolioReact@http://localhost:3001/remoteEntry.js',
                 },
                 shared: {
-                  ...deps,
-                  react: {
-                    singleton: true,
-                    requiredVersion: deps.react,
-                  },
-                  "react-dom": {
-                    singleton: true,
-                    requiredVersion: deps["react-dom"],
-                  },
+                    react: { singleton: true, eager: true },
+                    'react-dom': { singleton: true, eager: true },
                 },
             }
         )

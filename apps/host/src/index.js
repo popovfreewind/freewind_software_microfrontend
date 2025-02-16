@@ -1,8 +1,9 @@
 import './style.css';
 
-import portfolioReact from 'portfolio-react/App';
+//import portfolioReact from 'portfolio-react/PortfolioComponent';
 
 function mainContainerComponent() {
+    //console.log(portfolioReact);
     const container = document.createElement('div');
     const title = getTittleComponent();
     const selectForm = getPortfolioSelectorForm();

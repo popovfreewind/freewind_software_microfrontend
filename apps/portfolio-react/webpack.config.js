@@ -38,18 +38,11 @@ module.exports = {
             name: 'reactPortfolio',
             filename: "remoteEntry.js",
             exposes: {
-                "./App": "./src/App",
+                "./PortfolioComponent": "./src/PortfolioComponent",
             },
             shared: {
-              ...deps,
-              react: {
-                singleton: true,
-                requiredVersion: deps.react,
-              },
-              "react-dom": {
-                singleton: true,
-                requiredVersion: deps["react-dom"],
-              },
+                react: { singleton: true, eager: true },
+                'react-dom': { singleton: true, eager: true },
             },
         }),
         new HtmlWebpackPlugin({
