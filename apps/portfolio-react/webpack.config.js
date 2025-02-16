@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { container } = require('webpack');
-const { ModuleFederationPlugin } = container;
+const { ModuleFederationPlugin } = require("webpack").container;
 
 const deps = require("./package.json").dependencies;
 
@@ -39,12 +38,13 @@ module.exports = {
         new ModuleFederationPlugin({
             name: 'portfolioReact',
             filename: "remoteEntry.js",
+            remotes: {},
             exposes: {
                 "./PortfolioComponent": "./src/PortfolioComponent",
             },
             shared: {
-                react: { singleton: true, eager: true  },
-                'react-dom': { singleton: true, eager: true  },
+                react: { singleton: true, eager: true },
+                'react-dom': { singleton: true, eager: true },
             },
         }),
         new HtmlWebpackPlugin({
