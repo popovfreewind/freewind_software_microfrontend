@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { container } = require('webpack');
 const { ModuleFederationPlugin } = container;
 
+const deps = require("./package.json").dependencies;
+
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
@@ -33,10 +35,22 @@ module.exports = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'PortfolioReact',
-            filename: "remoteEntry.js",exposes: {
-                "./ReactPortfolio": "./src/ReactPortfolio",
+            name: 'reactPortfolio',
+            filename: "remoteEntry.js",
+            exposes: {
+                "./App": "./src/App",
+            },
+            shared: {
+              ...deps,
+              react: {
+                singleton: true,
+                requiredVersion: deps.react,
               },
+              "react-dom": {
+                singleton: true,
+                requiredVersion: deps["react-dom"],
+              },
+            },
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',

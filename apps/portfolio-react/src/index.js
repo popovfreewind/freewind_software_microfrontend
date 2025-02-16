@@ -1,8 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import ReactPortfolio from './ReactPortfolio';
+import App from './App';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
 
-root.render(<ReactPortfolio />);
+root.render(<App />);

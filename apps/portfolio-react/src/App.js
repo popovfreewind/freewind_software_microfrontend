@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReactPortfolio = () => {
+const App = () => {
   return (
     <div>
       <h1>react remote component</h1>
@@ -8,4 +8,4 @@ const ReactPortfolio = () => {
   );
 };
 
-export default ReactPortfolio;
+export default App;

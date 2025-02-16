@@ -1,5 +1,7 @@
 import './style.css';
 
+import portfolioReact from 'portfolio-react/App';
+
 function mainContainerComponent() {
     const container = document.createElement('div');
     const title = getTittleComponent();
