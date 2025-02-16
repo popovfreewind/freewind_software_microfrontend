@@ -2,8 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require("webpack").container;
 
-const deps = require("./package.json").dependencies;
-
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
@@ -13,7 +11,7 @@ module.exports = {
         port: 3001,
     },
     output: {
-        //publicPath: 'auto',
+        publicPath: "http://localhost:3001/",
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
@@ -41,10 +39,10 @@ module.exports = {
             exposes: {
                 "./PortfolioComponent": "./src/PortfolioComponent",
             },
-            // shared: {
-            //     react: { singleton: true, eager: true },
-            //     'react-dom': { singleton: true, eager: true },
-            // },
+            shared: {
+                react: { singleton: true, eager: true },
+                'react-dom': { singleton: true, eager: true },
+            },
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
