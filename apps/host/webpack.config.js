@@ -20,6 +20,16 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                    },
+                },
+            },
         ],
     },
     plugins: [
@@ -31,8 +41,8 @@ module.exports = {
                     portfolioReact: 'portfolioReact@http://localhost:3001/remoteEntry.js',
                 },
                 shared: {
-                    react: { singleton: true, eager: true  },
-                    'react-dom': { singleton: true, eager: true  },
+                    react: { singleton: true, eager: true },
+                    'react-dom': { singleton: true, eager: true },
                 },
             }
         )
