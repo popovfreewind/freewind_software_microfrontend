@@ -5,11 +5,13 @@ const path = require('path');
 
 module.exports = {
     entry: './src/index.js',
+    devtool: 'source-map',
     devServer: {
         static: path.resolve(__dirname, 'dist'),
         port: 3000,
     },
     output: {
+        publicPath: 'auto',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
@@ -25,13 +27,12 @@ module.exports = {
         new ModuleFederationPlugin(
             {
                 name: 'host',
-                filename: "remoteEntry.js",
                 remotes: {
-                    'portfolioReact': 'portfolioReact@http://localhost:3001/remoteEntry.js',
+                    portfolioReact: 'portfolioReact@http://localhost:3001/remoteEntry.js',
                 },
                 shared: {
-                    react: { singleton: true, eager: true },
-                    'react-dom': { singleton: true, eager: true },
+                    react: { singleton: true, eager: true  },
+                    'react-dom': { singleton: true, eager: true  },
                 },
             }
         )

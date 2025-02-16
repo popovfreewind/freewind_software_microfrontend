@@ -1,6 +1,7 @@
 import './style.css';
 
-//import portfolioReact from 'portfolio-react/PortfolioComponent';
+import portfolioReact from 'portfolioReact/PortfolioComponent';
+console.log('portfolioReact:', portfolioReact);
 
 function mainContainerComponent() {
     //console.log(portfolioReact);
