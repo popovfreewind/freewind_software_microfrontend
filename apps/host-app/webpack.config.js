@@ -1,6 +1,7 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require("webpack").container;
-const path = require('path');
+const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 
 module.exports = {
     entry: './src/index.js',
@@ -10,7 +11,7 @@ module.exports = {
         port: 3000,
     },
     output: {
-        publicPath: 'auto',
+        //publicPath: 'auto',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
@@ -39,11 +40,12 @@ module.exports = {
                 remotes: {
                     portfolioReact: 'portfolioReact@http://localhost:3001/remoteEntry.js',
                 },
-                shared: {
-                    react: { singleton: true, eager: true },
-                    'react-dom': { singleton: true, eager: true },
-                },
+                // shared: {
+                //     react: { singleton: true, eager: true },
+                //     'react-dom': { singleton: true, eager: true },
+                // },
             }
-        )
+        ),
+        new ExternalTemplateRemotesPlugin(),
     ],
 };

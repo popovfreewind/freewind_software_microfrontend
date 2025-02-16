@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-react",
+  "name": "portfolio-react-component",
   "scripts": {
     "test": "echo \"Error: portfolio-react is here\" && exit 1",
     "build": "webpack --mode production",

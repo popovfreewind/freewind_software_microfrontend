@@ -3,12 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "./apps/host",
+    "./apps/host-app",
     "./apps/portfolio-react"
   ],
   "scripts": {
     "test": "echo \"Error: freewind_software_microfrontend here \" && exit 1",
-    "build": "npm run build --workspace=apps/host & npm run build --workspace=apps/portfolio-react",
-    "start": "npm run start --workspace=apps/host & npm run start --workspace=apps/portfolio-react"
+    "build": "npm run build --workspace=apps/host-app & npm run build --workspace=apps/portfolio-react",
+    "start": "npm run start --workspace=apps/host-app & npm run start --workspace=apps/portfolio-react"
   }
 }

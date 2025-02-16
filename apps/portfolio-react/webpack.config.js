@@ -13,7 +13,7 @@ module.exports = {
         port: 3001,
     },
     output: {
-        publicPath: 'auto',
+        //publicPath: 'auto',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
@@ -38,14 +38,13 @@ module.exports = {
         new ModuleFederationPlugin({
             name: 'portfolioReact',
             filename: "remoteEntry.js",
-            remotes: {},
             exposes: {
                 "./PortfolioComponent": "./src/PortfolioComponent",
             },
-            shared: {
-                react: { singleton: true, eager: true },
-                'react-dom': { singleton: true, eager: true },
-            },
+            // shared: {
+            //     react: { singleton: true, eager: true },
+            //     'react-dom': { singleton: true, eager: true },
+            // },
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
