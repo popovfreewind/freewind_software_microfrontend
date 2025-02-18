@@ -1,9 +1,5 @@
 import './style.css';
 
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import ReactApp from './ReactApp';
-
 function mainContainerComponent() {
     const container = document.createElement('div');
     const title = getTittleComponent();
@@ -25,9 +21,19 @@ function initPortfolioSelectionListener(selectForm, portfolioContainer) {
         const selectedPortfolio = event.target.value;
         portfolioContainer.innerHTML = '';
         if (selectedPortfolio === 'react') {
-            const root = createRoot(portfolioContainer);
-            root.render(<ReactApp />);
+            (async () => {
+                // Dynamically import React and ReactDOM
+                const [{ default: React }, ReactDOMClient, { default: ReactApp }] = await Promise.all([
+                    import('react'),
+                    import('react-dom/client'),
+                    import('./ReactApp')
+                ]);
 
+                // Extract createRoot from the react-dom/client module
+                const { createRoot } = ReactDOMClient;
+                const root = createRoot(portfolioContainer);
+                root.render(<ReactApp />);
+            })();
         }
     });
 }
