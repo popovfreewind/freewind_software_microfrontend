@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
             port: 3000,
         },
         output: {
-            publicPath: isProduction ? './dist/' : 'http://localhost:3000/',
+            publicPath: isProduction ? './' : 'http://localhost:3000/',
             path: path.resolve(__dirname, '../../dist'),
         },
         module: {
