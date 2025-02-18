@@ -1,16 +1,16 @@
 import './style.css';
 
-import portfolioReact from 'portfolioReact/PortfolioComponent';
-console.log('portfolioReact:', portfolioReact);
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import ReactApp from './ReactApp';
 
 function mainContainerComponent() {
-    //console.log(portfolioReact);
     const container = document.createElement('div');
     const title = getTittleComponent();
     const selectForm = getPortfolioSelectorForm();
     const portfolioContainer = document.createElement('div');
 
-    container.append(title, selectForm);
+    container.append(title, selectForm, portfolioContainer);
     container.style.display = 'flex';
     container.style.flexDirection = 'column';
     container.style.alignItems = 'center';
@@ -23,6 +23,12 @@ function mainContainerComponent() {
 function initPortfolioSelectionListener(selectForm, portfolioContainer) {
     selectForm.addEventListener('change', (event) => {
         const selectedPortfolio = event.target.value;
+        portfolioContainer.innerHTML = '';
+        if (selectedPortfolio === 'react') {
+            const root = createRoot(portfolioContainer);
+            root.render(<ReactApp />);
+
+        }
     });
 }
 
