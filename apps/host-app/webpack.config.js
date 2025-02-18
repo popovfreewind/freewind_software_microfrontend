@@ -43,6 +43,7 @@ module.exports = {
                 shared: {
                     react: { singleton: true, eager: true },
                     'react-dom': { singleton: true, eager: true },
+                    'mvp.css': { singleton: true, eager: true },
                 },
             }
         ),

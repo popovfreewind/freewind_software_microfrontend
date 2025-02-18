@@ -1,9 +1,11 @@
-import React from 'react';
-import PortfolioComponent from 'portfolioReact/PortfolioComponent';
+import React, { Suspense } from 'react';
+const PortfolioComponent = React.lazy(() => import('portfolioReact/PortfolioComponent'));
 
 const App = () => {
     return (
-        <PortfolioComponent />
+        <Suspense fallback={"loading..."}>
+            <PortfolioComponent />
+        </Suspense>
     );
 }
 
