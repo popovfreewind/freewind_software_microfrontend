@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require("webpack").container;
-const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 
 module.exports = {
     entry: './src/index.js',
@@ -47,6 +46,5 @@ module.exports = {
                 },
             }
         ),
-        new ExternalTemplateRemotesPlugin(),
     ],
 };
