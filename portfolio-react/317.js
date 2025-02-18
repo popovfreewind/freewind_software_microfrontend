@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio_react_component=self.webpackChunkportfolio_react_component||[]).push([[317],{317:(e,t,n)=>{n.r(t),n.d(t,{default:()=>r});var o=n(711),c=n.n(o);const r=function(){return c().createElement("div",null,c().createElement("h1",null,"react remote component"))}}}]);
+//# sourceMappingURL=317.js.map
