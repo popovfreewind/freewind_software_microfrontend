@@ -57,6 +57,7 @@ function getPortfolioRadioButton(value, label) {
     const radio = document.createElement('input');
     radio.type = 'radio';
     radio.value = value;
+    radio.name = 'portfolio-selection';
 
     const radioLabel = document.createElement('label');
     radioLabel.innerHTML = label;

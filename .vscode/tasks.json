@@ -8,5 +8,13 @@
 			"script": "start",
             "problemMatcher": []
 		}
+		,
+		{
+			"type": "npm",
+			"label": "webpack: build",
+			"detail": "webpack --mode production",
+			"script": "build",
+			"problemMatcher": []
+		}
 	]
 }
