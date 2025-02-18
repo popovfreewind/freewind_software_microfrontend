@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
             port: 3000,
         },
         output: {
-            publicPath: isProduction ? './' : 'http://localhost:3000/',
+            publicPath: isProduction ? 'https://popovfreewind.github.io/freewind_software_microfrontend/' : 'http://localhost:3000/',
             path: path.resolve(__dirname, '../../dist'),
         },
         module: {
