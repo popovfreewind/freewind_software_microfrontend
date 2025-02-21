@@ -44,6 +44,9 @@ module.exports = (env, argv) => {
                         portfolioReact: isProduction
                             ? 'portfolioReact@https://popovfreewind.github.io/freewind_software_microfrontend/portfolio-react/remoteEntry.js'
                             : 'portfolioReact@http://localhost:3001/remoteEntry.js',
+                        portfolioVue: isProduction
+                            ? 'portfolioVue@https://popovfreewind.github.io/freewind_software_microfrontend/portfolio-vue/remoteEntry.js'
+                            : 'portfolioVue@http://localhost:3002/remoteEntry.js',
                     },
                     shared: {
                         react: { singleton: true, eager: true },
