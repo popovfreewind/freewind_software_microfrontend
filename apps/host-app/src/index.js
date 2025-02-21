@@ -23,10 +23,17 @@ function initPortfolioSelectionListener(selectForm, portfolioContainer) {
         if (selectedPortfolio === 'react') {
             try {
                 const reactBootstrap = (await import('./react-portfolio/reactBootstrap')).default;
-                console.log(reactBootstrap);
                 reactBootstrap(portfolioContainer);
             } catch (error) {
                 console.error('Error loading React module:', error);
+            }
+
+        } else if (selectedPortfolio === 'vue') {
+            try {
+                const vueBootstrap = (await import('./vue-portfolio/vueBootstrap')).default;
+                vueBootstrap(portfolioContainer);
+            } catch (error) {
+                console.error('Error loading Vue module:', error);
             }
         }
     });

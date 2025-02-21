@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require("webpack").container;
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
@@ -33,9 +34,11 @@ module.exports = (env, argv) => {
                         },
                     },
                 },
+                { test: /\.vue$/, loader: "vue-loader" },
             ],
         },
         plugins: [
+            new VueLoaderPlugin(),
             new HtmlWebpackPlugin({ template: './src/index.html' }),
             new ModuleFederationPlugin(
                 {
