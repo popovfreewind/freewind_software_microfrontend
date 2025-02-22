@@ -1,20 +1,17 @@
 {
-  "name": "portfolio-vue",
+  "name": "portfolio-angular",
   "scripts": {
-    "test": "echo \"Error: portfolio-vue is here\" && exit 1",
+    "test": "echo \"Error: portfolio-angular is here\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development"
   },
   "dependencies": {
-    "mvp.css": "^1.17.1",
-    "vue": "^3.5.13"
+    "mvp.css": "^1.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",
-    "@vue/compiler-sfc": "^3.5.13",
     "babel-loader": "^9.2.1",
     "html-webpack-plugin": "^5.3.1",
-    "vue-loader": "^17.4.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^4.0.0"

@@ -5,11 +5,12 @@
   "workspaces": [
     "./apps/host-app",
     "./apps/portfolio-react",
-    "./apps/portfolio-vue"
+    "./apps/portfolio-vue",
+    "./apps/portfolio-angular"
   ],
   "scripts": {
     "test": "echo \"Error: freewind_software_microfrontend here \" && exit 1",
-    "build": "npm run build --workspace=apps/host-app & npm run build --workspace=apps/portfolio-react & npm run build --workspace=apps/portfolio-vue",
-    "start": "npm run start --workspace=apps/host-app & npm run start --workspace=apps/portfolio-react & npm run start --workspace=apps/portfolio-vue"
+    "build": "npm run build --workspace=apps/host-app & npm run build --workspace=apps/portfolio-react & npm run build --workspace=apps/portfolio-vue & npm run build --workspace=apps/portfolio-angular",
+    "start": "npm run start --workspace=apps/host-app & npm run start --workspace=apps/portfolio-react & npm run start --workspace=apps/portfolio-vue & npm run start --workspace=apps/portfolio-angular"
   }
 }
