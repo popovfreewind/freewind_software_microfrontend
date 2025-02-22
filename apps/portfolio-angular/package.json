@@ -6,12 +6,16 @@
     "start": "webpack serve --mode development"
   },
   "dependencies": {
+    "@angular/core": "^19.1.7",
+    "@angular/platform-browser": "^19.1.7",
     "mvp.css": "^1.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",
     "babel-loader": "^9.2.1",
     "html-webpack-plugin": "^5.3.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^4.0.0"

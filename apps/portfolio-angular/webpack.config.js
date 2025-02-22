@@ -6,7 +6,7 @@ module.exports = (env, argv) => {
     const isProduction = argv.mode === 'production';
 
     return {
-        entry: './src/index.js',
+        entry: './src/index.ts',
         mode: argv.mode,
         devtool: 'source-map',
         devServer: {
@@ -23,6 +23,10 @@ module.exports = (env, argv) => {
                     test: /\.css$/,
                     use: ['style-loader', 'css-loader'],
                 },
+                {
+                    test: /\.ts$/,
+                    loader: 'ts-loader'
+                  },
             ],
         },
         plugins: [
